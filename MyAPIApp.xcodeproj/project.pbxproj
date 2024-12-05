@@ -27,6 +27,7 @@
 		9647C54D2D01A10A001E1B70 /* MyAPIApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyAPIApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9647C55E2D01A10D001E1B70 /* MyAPIAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyAPIAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9647C5682D01A10D001E1B70 /* MyAPIAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyAPIAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9647C5942D01A3B0001E1B70 /* MyAPIApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MyAPIApp.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -76,6 +77,7 @@
 			isa = PBXGroup;
 			children = (
 				9647C54F2D01A10A001E1B70 /* MyAPIApp */,
+				9647C5942D01A3B0001E1B70 /* MyAPIApp.entitlements */,
 				9647C5612D01A10D001E1B70 /* MyAPIAppTests */,
 				9647C56B2D01A10D001E1B70 /* MyAPIAppUITests */,
 				9647C54E2D01A10A001E1B70 /* Products */,
@@ -391,7 +393,7 @@
 				CODE_SIGN_ENTITLEMENTS = MyAPIApp/MyAPIApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"MyAPIApp/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"MyAPIApp/Resources/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
@@ -428,7 +430,7 @@
 				CODE_SIGN_ENTITLEMENTS = MyAPIApp/MyAPIApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"MyAPIApp/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"MyAPIApp/Resources/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
