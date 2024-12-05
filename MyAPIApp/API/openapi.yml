@@ -1,0 +1,180 @@
+# openapi（必須）セクション: openapiのバージョン情報をセマンティックバージョンを記述
+openapi: "3.0.3"
+
+# info（必須）セクション: APIの基本情報を記述、タイトル、説明、バージョンなど
+info:
+  title: Test API
+  description: "OpenAPIでAPIの仕様書を定義し、OpenAPI Generatorで、定義した仕様書を基にクライアントコード（iOS）を生成する。その一連の流れをアウトプットするテスト用のAPI仕様書です。"
+  version: "1.0"
+
+# serversセクション: APIを提供するサーバーについて記述、環境ごとに情報も記述できる、環境ごとのサンプルはコメントアウトで表示
+servers:
+  - url: https://dev-api.server.test/v1
+    description: 開発環境
+  - url: https://prod-api.server.test/v1
+    description: 本番環境
+
+# paths（必須）セクション: openapiのバージョン情報をセマンティックバージョンを記述
+paths:
+  /users:
+    get:
+      summary: "ユーザーの一覧取得"
+      description: "ユーザーの一覧を返します"
+      # responses: ステータスごとにレスポンス形式を定義
+      responses:
+        "200":
+          description: "ユーザーの一覧情報の取得に成功しました"
+          # content: レスポンス形式の内容
+          content:
+            # JSONレスポンスを指定
+            application/json:
+              # サーバーが返すレスポンスデータの構造を定義
+              schema:
+                # レスポンス全体が配列形式を指定
+                # Swiftで [User] 型のように、オブジェクトを格納する配列を定義しているイメージ
+                type: array
+                # 配列内の各要素のデータ構造を指定
+                # Swiftの Userモデルを作成し、それが [User] に格納されるようなイメージ。
+                items:
+                  # 配列の各要素は「オブジェクト形式」であることを指定
+                  # Swiftの struct User の定義に近い、このファイルの一番下の行にサンプルコードを記述しておく
+                  type: object
+                  # オブジェクト内のキーとそのデータ型を定義
+                  # Swiftの struct User のプロパティに近い
+                  properties:
+                    # これがキー
+                    id:
+                      # これがキーに対する値（型も混み）
+                      type: integer
+                      # サンプルの値
+                      example: 123
+                    name:
+                      type: string
+                      example: "yamada"
+                    email:
+                      type: string
+                      example: "yamada@example.com"
+        "400":
+          description: "リクエストが不正です"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: "Invalid request."
+
+  # 特定のユーザー情報を取得または更新するエンドポイント。URLにユーザーIDを含む。
+  /users/{userId}:
+    # HTTPメソッドGET。このエンドポイントでは、指定されたユーザーIDの情報を取得する操作
+    get:
+      # エンドポイントの簡単な説明。特定のユーザー情報を取得する。
+      summary: "特定のユーザー情報を取得"
+      # より詳しい説明。
+      description: "ユーザーIDをもとにユーザー情報を取得します"
+      # このエンドポイントが受け取るパラメータ。
+      parameters:
+        # パスパラメータ「userId」を定義。
+        - name: "userId"
+          # パスパラメータとして受け取る（URLの「/users/{userId}」）。
+          in: path
+          # このパラメータは必須であることを指定。
+          required: true
+          schema:
+            type: integer
+            example: 123
+            # レスポンスの定義。
+      responses:
+        # ユーザー情報を取得に成功した場合は200を返す
+        "200":
+          # 成功時の説明。
+          description: "ユーザー情報を取得しました"
+          content:
+            # レスポンスはJSON形式で返される。
+            application/json:
+              schema:
+                # レスポンスはオブジェクト型。
+                type: object
+                # オブジェクトの中身。
+                properties:
+                  id:
+                    type: integer
+                  name:
+                    type: string
+                  email:
+                    type: string
+        # ユーザーが見つからなかった場合のエラーレスポンス。
+        "404":
+          description: "ユーザーが見つかりません"
+          content:
+            # エラーレスポンスもJSON形式。
+            application/json:
+              schema:
+                # エラー情報はオブジェクト型。
+                type: object
+                # エラーオブジェクトのプロパティ。
+                properties:
+                  error:
+                    type: string
+                  code:
+                    type: integer
+
+    # HTTPメソッドPUT。このエンドポイントでは、指定されたユーザーIDの情報を更新する操作。
+    put:
+      # エンドポイントの簡単な説明。特定のユーザー情報を更新する。
+      summary: "特定のユーザー情報を更新"
+      description: "ユーザー情報を更新します"
+      # このエンドポイントが受け取るパラメータ。
+      parameters:
+        # パスパラメータ「userId」を定義。
+        - name: "userId"
+          # パスパラメータとして受け取る。
+          in: path
+          # このパラメータは必須。
+          required: true
+          schema:
+            type: integer
+            example: 123
+            # リクエストボディの定義（更新する内容）。
+      requestBody:
+        # 更新する情報の説明。
+        description: "更新するユーザー情報"
+        # このリクエストボディは必須。
+        required: true
+        content:
+          # リクエストボディの形式はJSON。
+          application/json:
+            schema:
+              # リクエストボディはオブジェクト型。
+              type:
+                object
+                # オブジェクトの中身。
+              properties:
+                # 更新するユーザー名。
+                name:
+                  type: string
+                  # 更新するメールアドレス。
+                email:
+                  # メールは文字列型。
+                  type:
+                    string
+                    # レスポンスの定義。
+      responses:
+        # 更新成功時のレスポンス。
+        "200":
+          description: "ユーザー情報が更新されました"
+          # リクエストエラーの場合のレスポンス。
+        "400":
+          description: "リクエストエラー"
+# /usersのitemsセクションで記載したサンプルコードはこれ
+# schema以下の部分
+# struct User: Codable {
+#     let id: Int
+#     let name: String
+#     let email: String
+# }
+
+# let users: [User] = [
+#     User(id: 123, name: "suzuki kotaroue", email: "suzuki@example.com")
+# ]
