@@ -1,0 +1,11 @@
+//
+//  Production.xcconfig
+//  MyAPIApp
+//
+//  Created by 石井蘭丸 on 2024/12/05.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+INFOPLIST_FILE = $(SRCROOT)/MyAPIApp/Environment/Info-Production.plist
