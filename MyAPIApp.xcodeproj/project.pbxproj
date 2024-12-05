@@ -546,7 +546,7 @@
 		9647C5DE2D01BD7B001E1B70 /* Development */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReferenceAnchor = 9647C54F2D01A10A001E1B70 /* MyAPIApp */;
-			baseConfigurationReferenceRelativePath = Environment/Development.xcconfig;
+			baseConfigurationReferenceRelativePath = Environment/XCConfigs/Development.xcconfig;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -602,7 +602,7 @@
 		9647C5DF2D01BD7B001E1B70 /* Development */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReferenceAnchor = 9647C54F2D01A10A001E1B70 /* MyAPIApp */;
-			baseConfigurationReferenceRelativePath = Environment/Development.xcconfig;
+			baseConfigurationReferenceRelativePath = Environment/XCConfigs/Development.xcconfig;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -684,7 +684,7 @@
 		9647C5E22D01BD7D001E1B70 /* Production */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReferenceAnchor = 9647C54F2D01A10A001E1B70 /* MyAPIApp */;
-			baseConfigurationReferenceRelativePath = Environment/Production.xcconfig;
+			baseConfigurationReferenceRelativePath = Environment/XCConfigs/Production.xcconfig;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -740,7 +740,7 @@
 		9647C5E32D01BD7D001E1B70 /* Production */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReferenceAnchor = 9647C54F2D01A10A001E1B70 /* MyAPIApp */;
-			baseConfigurationReferenceRelativePath = Environment/Production.xcconfig;
+			baseConfigurationReferenceRelativePath = Environment/XCConfigs/Production.xcconfig;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

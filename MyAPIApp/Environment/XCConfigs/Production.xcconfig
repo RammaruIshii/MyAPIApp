@@ -1,5 +1,5 @@
 //
-//  Development.xcconfig
+//  Production.xcconfig
 //  MyAPIApp
 //
 //  Created by 石井蘭丸 on 2024/12/05.
@@ -8,5 +8,4 @@
 // Configuration settings file format documentation can be found at:
 // https://help.apple.com/xcode/#/dev745c5c974
 
-// build settingで指定したplistと同じパスを設定
-INFOPLIST_FILE = $(SRCROOT)/MyAPIApp/Environment/Info-Development.plist
+INFOPLIST_FILE = $(SRCROOT)/MyAPIApp/Environment/InfoPlists/Info-Production.plist
