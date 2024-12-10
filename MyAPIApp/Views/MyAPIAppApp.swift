@@ -6,12 +6,19 @@
 //
 
 import SwiftUI
+import OpenAPIClient
 
 @main
 struct MyAPIAppApp: App {
+    private let apiManager = APIManager()
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .onAppear {
+                    OpenAPIClientAPI.basePath = apiManager.getBaseURL()
+                    print("OpenAPIClientAPI.basePath: \(OpenAPIClientAPI.basePath)")
+                }
         }
     }
 }

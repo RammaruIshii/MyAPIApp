@@ -6,23 +6,31 @@
 //
 
 import SwiftUI
+import OpenAPIClient
 
 struct ContentView: View {
-    let apiUrl: String = "API_URL"
+    @StateObject private var viewModel = UserViewModel()
+    private let defaultNamePlaceholder = "名前のデータなし"
+    private let defaultEmailPlaceholder = "メールのデータなし"
+    
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
-        }
-        .padding()
-        .onAppear {
-            if let apiUrl = Bundle.main.object(forInfoDictionaryKey: apiUrl) as? String {
-                // 環境ごとにエンドポイントが出し分けできているか確認
-                print("API URL: \(apiUrl)")
+            if let errorMessage = viewModel.errorMessage {
+                Text(errorMessage)
+                    .foregroundColor(.red)
+            }
+            
+            List(viewModel.users, id: \.id) { user in
+                VStack(alignment: .leading) {
+                    Text(user.name ?? defaultNamePlaceholder)
+                    Text(user.email ?? defaultEmailPlaceholder)
+                }
+            }
+            .onAppear {                
+                viewModel.fetchUsers()
             }
         }
+        .padding()
     }
 }
 
