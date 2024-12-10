@@ -16,7 +16,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "9647C54C2D01A10A001E1B70"
-               BuildableName = "MyAPIApp-Development.app"
+               BuildableName = "MyAPIApp.app"
                BlueprintName = "MyAPIApp"
                ReferencedContainer = "container:MyAPIApp.xcodeproj">
             </BuildableReference>
@@ -69,7 +69,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "9647C54C2D01A10A001E1B70"
-            BuildableName = "MyAPIApp-Development.app"
+            BuildableName = "MyAPIApp.app"
             BlueprintName = "MyAPIApp"
             ReferencedContainer = "container:MyAPIApp.xcodeproj">
          </BuildableReference>
@@ -86,7 +86,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "9647C54C2D01A10A001E1B70"
-            BuildableName = "MyAPIApp-Development.app"
+            BuildableName = "MyAPIApp.app"
             BlueprintName = "MyAPIApp"
             ReferencedContainer = "container:MyAPIApp.xcodeproj">
          </BuildableReference>
